@@ -11,21 +11,31 @@ const bici = [ //Array di oggetti
 console.log(bici); // Stampo Array bici
 
 //Stampare a schermo la bici con peso minore utilizzando destructuring e template literal
-const [pesoOne, pesoTwo, pesoThree] = bici;
-//console.log(pesoOne, pesoTwo, pesoThree); //Destructuring
+const [pesoOne, pesoTwo, pesoThree] = bici; //Destruttoro peso
+//console.log(pesoOne, pesoTwo, pesoThree); 
+
+let biciLeggera = bici[0]; //variabile d'appoggio
 
 for(let i = 0; i < bici.length; i++) {
    // console.log(pesoOne, pesoTwo, pesoThree);
        
     if(bici[i].peso < bici[0].peso) { //Imposto la condizione: trova il peso minore all'interno dell'Array bici 
-        bici[0] = bici[i];
+        biciLeggera = bici[i];
     }
 }
 
-console.log(bici[0]);//Stampa bici leggera
+console.log(biciLeggera);//Stampa bici leggera
 
 //BONUS: inserire una arrow function che preso in input l'array di bici ritorni l'oggetto con bici più leggera
+//funzione con nome
+const myFuction = () => bici[0].peso;
+const resultFuction = myFuction();
 
+
+//funzione anonima
+document.getElementById('button').addEventListener('click', 
+    () => console.log(this)
+);
 
 
 //Snack 2-------------------------------------------------------------------------------------------------------------------------------------
@@ -56,6 +66,12 @@ console.log(squadre); //stampo a schermo "punti fatti" e " falli subiti"
 //Snack 2-------------------------------------------------------------------------------------------------------------------------------------
 console.log(' Snack 2 - Squadra Destrutturata ');
 //Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+
+/*
+const [propertyOne, ,propertyThree] = squadre;
+console.log(propertyOne, propertyThree); //stampo a schermo "nomi" e " falli subiti" 
+*/
+
 const squadreNew = [
     { nome: 'milan',    falliSubiti : 0},
     { nome: 'palermo',  falliSubiti : 0},
@@ -71,3 +87,4 @@ for(let i = 0; i < squadreNew.length; i++) {   //Ciclo for per tutti gli oggetti
 
 const [nomeOne, nomeTwo, nomeThree, nomeFour] = squadreNew;
 console.log(nomeOne, nomeTwo, nomeThree, nomeFour); //stampo a schermo "nomi" e " falli subiti" 
+
