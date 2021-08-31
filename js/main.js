@@ -18,7 +18,7 @@ const [pesoOne, pesoTwo, pesoThree] = bici;
 
 for(let i = 0; i < bici.length; i++) {
    // console.log(pesoOne, pesoTwo, pesoThree);
-    
+       
     if(bici[i].peso < bici[0].peso) { //Imposto la condizione: trova il peso minore all'interno dell'Array bici 
         bici[0] = bici[i];
     }
@@ -26,13 +26,35 @@ for(let i = 0; i < bici.length; i++) {
 
 console.log(bici[0]);//Stampa bici leggera
 
+
 //BONUS: inserire una arrow function che preso in input l'array di bici ritorni l'oggetto con bici più leggera
 
 
 
 //Snack 2--------------------------------------------------------------------------------------------
+console.log(' Snack 2 ');
 //Creare un array di oggetti di squadre di calcio. Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
 //Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
-//Generare numeri random al posto degli 0 nelle proprietà:
-//Punti fatti e falli subiti.
+const squadre = [
+    { nome: 'milan',    puntiFatti : 0, falliSubiti : 0},
+    { nome: 'palermo',  puntiFatti : 0, falliSubiti : 0},
+    { nome: 'cagliari', puntiFatti : 0, falliSubiti : 0},
+    { nome: 'napoli',   puntiFatti : 0, falliSubiti : 0},
+
+];
+
+//console.log(squadre);
+//Generare numeri random al posto degli 0 nelle proprietà: Punti fatti e falli subiti.
+
+let punti = squadre.length; //Numero random nei punti fatti
+let falli = squadre.length; //Numero random nei falli subiti
+
+for(let i = 0; i < squadre.length; i++) {   //Ciclo for per tutti gli oggetti all'interno dell'Array squadre
+    squadre[i].puntiFatti = (Math.floor(Math.random() * 100) + 1);  //Numero random nei puntiFatti
+    squadre[i].falliSubiti = (Math.floor(Math.random() * 100) + 1); //Numero random nei falliSubiti
+}
+
+console.log(squadre); //stampo a schermo "punti fatti" e " falli subiti" 
+
+
 //Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
