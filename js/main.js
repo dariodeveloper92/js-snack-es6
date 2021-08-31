@@ -1,36 +1,30 @@
 //Snack 1--------------------------------------------------------------------------------------------
-//Creare un array di oggetti:
-//Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
-//Creare un array di oggetti: 
-//Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso. 
 console.log('Snack 1');
 
+//Creare un array di oggetti:
+//Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
 const bici = [ //Array di oggetti
 {    nome : 'Carlo' ,  peso : 20 },
 {    nome : 'Luca' ,   peso : 30 },
 {    nome : 'Marco' ,  peso : 50 },
 ];
 
-console.log(bici);
-/*
-//Stampare a schermo la bici con peso minore.
-let biciLeggera = bici[0];//Imposto bici[0] perchè fisso un paletto al primo oggetto dell'Array in modo da confrontarlo con ogni oggetto all'interno dell'Array
+console.log(bici); // Stampo Array bici
 
-
-for(let i = 0; i < bici.length; i++) {
-    //console.log(bici[i]); 
-    
-    if(bici[i].peso < biciLeggera.peso) { //Imposto la condizione: trova il peso minore all'interno dell'Array bici 
-        biciLeggera = bici[i];
-    }
-}
-
-console.log(biciLeggera);//Stampa bici leggera
-*/
 //Stampare a schermo la bici con peso minore utilizzando destructuring e template literal
 //destructuring e template literal
 const [pesoOne, pesoTwo, pesoThree] = bici;
-console.log(pesoOne, pesoTwo, pesoThree);
+//console.log(pesoOne, pesoTwo, pesoThree); //Destructuring
+
+for(let i = 0; i < bici.length; i++) {
+   // console.log(pesoOne, pesoTwo, pesoThree);
+    
+    if(bici[i].peso < bici[0].peso) { //Imposto la condizione: trova il peso minore all'interno dell'Array bici 
+        bici[0] = bici[i];
+    }
+}
+
+console.log(bici[0]);//Stampa bici leggera
 
 //BONUS: inserire una arrow function che preso in input l'array di bici ritorni l'oggetto con bici più leggera
 
