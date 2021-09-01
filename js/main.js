@@ -76,8 +76,45 @@ for(let i = 0; i < squadre.length; i++) {
 console.log(squadreNew);
 
 //Snack 3-------------------------------------------------------------------------------------------------------------------------------------
+console.log(' Snack 3 ');
 //Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
+let a = prompt('Inserisci un numero tra 1 e 5');
+let b = prompt('Inserisci un numero tra 6 e 10');
+array = [];
 
+//funzione "Parametro Rest" (...) = Spread + (myArgument) = Nome paramentro dell'Array
+function myFunction(...myArguments) {
+    console.log(...myArguments);
+}
+myFunction(array, a, b );
+
+//Arrow Functions
+const myFunction = (array, a, b) => {} ;
+const resultFuction = myFunction(array, a, b);
+
+console.log(myFunction);
+
+//---------------------------------------------------------------------------------------------
+/*
+const myFunction = () => {array, a, b};
+console.log(myFunction());
+*/
+//---------------------------------------------------------------------------------------------
+
+
+
+//---------------------------------------------------------------------------------------------
+/*
 //La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
-
 //Usiamo i nuovi metodi degli array foreach o filter.
+//usare filter
+
+const numeri = a, b;
+const arrayNew = myFunction.filter((numero) => {
+    if (numero < 6 ) {
+        return true;
+    }
+    return false;
+});
+console.log(arrayNew);
+*/
