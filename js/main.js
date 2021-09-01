@@ -80,41 +80,27 @@ console.log(' Snack 3 ');
 //Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
 let a = prompt('Inserisci un numero tra 1 e 5');
 let b = prompt('Inserisci un numero tra 6 e 10');
-array = [];
+let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-//funzione "Parametro Rest" (...) = Spread + (myArgument) = Nome paramentro dell'Array
-function myFunction(...myArguments) {
-    console.log(...myArguments);
-}
-myFunction(array, a, b );
+//La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri. Usiamo FILTER:
+//Arrow Functions - senza valore di return
+const myFunction = (array, a, b) => { 
+    console.log(array, a, b);
 
-//Arrow Functions
-const myFunction = (array, a, b) => {} ;
-const resultFuction = myFunction(array, a, b);
+    const arrayNew = array.filter((numero, index, arr) => {     //numero = elemento/ index = indice/ arr = array
+    if (numero < b && numero > a ) {                            //se il 'numero > a' e 'numero < b'
+            return true;
+        }
+        return false;
+    });
 
-console.log(myFunction);
+    return arrayNew; //Richiamo Array new
 
-//---------------------------------------------------------------------------------------------
-/*
-const myFunction = () => {array, a, b};
-console.log(myFunction());
-*/
-//---------------------------------------------------------------------------------------------
+} ;
+//const resultFuction = myFunction();
 
+myFunction(array, a, b);
 
+let arrayFinale = myFunction(array, a, b); //Variabile di appoggio
 
-//---------------------------------------------------------------------------------------------
-/*
-//La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
-//Usiamo i nuovi metodi degli array foreach o filter.
-//usare filter
-
-const numeri = a, b;
-const arrayNew = myFunction.filter((numero) => {
-    if (numero < 6 ) {
-        return true;
-    }
-    return false;
-});
-console.log(arrayNew);
-*/
+console.log(arrayFinale); //Stampo a schermo la Variabile di appoggio
