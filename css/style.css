@@ -11,12 +11,3 @@ main {
     background-color: lightgray;
 }
 
-#button {
-    width: 100px;
-    height: 50px;
-    position: absolute;
-    margin: 500px 200px;
-    border-radius: 10px;
-    background-color: blue;
-    color: white;
-}

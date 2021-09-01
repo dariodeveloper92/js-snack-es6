@@ -10,34 +10,32 @@ const bici = [ //Array di oggetti
 
 console.log(bici); // Stampo Array bici
 
-//Stampare a schermo la bici con peso minore utilizzando destructuring e template literal
-const [pesoOne, pesoTwo, pesoThree] = bici; //Destruttoro peso
-//console.log(pesoOne, pesoTwo, pesoThree); 
 
 let biciLeggera = bici[0]; //variabile d'appoggio
 
 for(let i = 0; i < bici.length; i++) {
    // console.log(pesoOne, pesoTwo, pesoThree);
        
-    if(bici[i].peso < bici[0].peso) { //Imposto la condizione: trova il peso minore all'interno dell'Array bici 
+    if(bici[i].peso < biciLeggera.peso) { //Imposto la condizione: trova il peso minore all'interno dell'Array bici 
         biciLeggera = bici[i];
     }
 }
 
 console.log(biciLeggera);//Stampa bici leggera
 
-//BONUS: inserire una arrow function che preso in input l'array di bici ritorni l'oggetto con bici più leggera
-//funzione con nome
-const myFuction = () => bici[0].peso;
-const resultFuction = myFuction();
+//Stampare utilizzando destructuring e template literal
+const { peso, nome } = biciLeggera; //destructuring in maniera generica con gli Oggetti
 
+console.log(peso, nome);
 
-//funzione anonima
-document.getElementById('button').addEventListener('click', 
-    () => console.log(this)
-);
-
-
+//Per stamparlo in HTML + template literal
+document.getElementById('container').innerHTML =
+`               
+<ul>                        
+    <li>Nome: ${nome}</li>
+    <li>Peso: ${peso}</li>
+<ul>
+`
 //Snack 2-------------------------------------------------------------------------------------------------------------------------------------
 console.log(' Snack 2 - Squadra Random ');
 //Creare un array di oggetti di squadre di calcio. Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
@@ -66,25 +64,20 @@ console.log(squadre); //stampo a schermo "punti fatti" e " falli subiti"
 //Snack 2-------------------------------------------------------------------------------------------------------------------------------------
 console.log(' Snack 2 - Squadra Destrutturata ');
 //Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+//Metodo Generico
+const squadreNew = [];
 
-/*
-const [propertyOne, ,propertyThree] = squadre;
-console.log(propertyOne, propertyThree); //stampo a schermo "nomi" e " falli subiti" 
-*/
-
-const squadreNew = [
-    { nome: 'milan',    falliSubiti : 0},
-    { nome: 'palermo',  falliSubiti : 0},
-    { nome: 'cagliari', falliSubiti : 0},
-    { nome: 'napoli',   falliSubiti : 0},
-];
-
-let falliNew = squadreNew.length; //Numero random nei falli subiti
-
-for(let i = 0; i < squadreNew.length; i++) {   //Ciclo for per tutti gli oggetti all'interno dell'Array squadreNew
-    squadreNew[i].falliSubiti = (Math.floor(Math.random() * 100) + 1); //Numero random nei falliSubiti
+for(let i = 0; i < squadre.length; i++) {  
+    
+    const { nome, falliSubiti} = squadre[i];
+    squadreNew.push(nome, falliSubiti); 
 }
 
-const [nomeOne, nomeTwo, nomeThree, nomeFour] = squadreNew;
-console.log(nomeOne, nomeTwo, nomeThree, nomeFour); //stampo a schermo "nomi" e " falli subiti" 
+console.log(squadreNew);
 
+//Snack 3-------------------------------------------------------------------------------------------------------------------------------------
+//Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
+
+//La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
+
+//Usiamo i nuovi metodi degli array foreach o filter.
